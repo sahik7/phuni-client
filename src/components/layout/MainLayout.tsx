@@ -1,8 +1,8 @@
 import { createElement } from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, MenuProps } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-const items = [
+const items: MenuProps["items"] = [
     {
         key: "key1",
         label: "Dashboard",
