@@ -4,17 +4,17 @@ const { Header, Content, Footer, Sider } = Layout;
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 const items = [
     {
-        key: "key",
+        key: "key1",
         label: "Dashboard",
 
     },
     {
-        key: "key",
+        key: "key2",
         label: "Profile",
 
     },
     {
-        key: "key",
+        key: "key3",
         label: "User Management",
 
     },
