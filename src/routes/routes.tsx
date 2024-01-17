@@ -7,7 +7,7 @@ import Register from "../pages/Register";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/admin",
         element: <App />,
         children: [
             {
