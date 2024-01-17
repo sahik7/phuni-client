@@ -1,7 +1,6 @@
-import { createElement } from 'react';
+import { Outlet } from "react-router-dom";
 import { Layout, Menu, MenuProps } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 const items: MenuProps["items"] = [
     {
         key: "key1",
@@ -50,7 +49,9 @@ const MainLayout = () => {
                     console.log(collapsed, type);
                 }}
             >
-                <div className="demo-logo-vertical" />
+                <div style={{ color: "white", height: "4rem", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <h1>PH Uni</h1>
+                </div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
             </Sider>
             <Layout>
@@ -62,7 +63,7 @@ const MainLayout = () => {
                             minHeight: 360
                         }}
                     >
-                        <h1>the main content should</h1>
+                        <Outlet />
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
