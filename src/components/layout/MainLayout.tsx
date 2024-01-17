@@ -2,13 +2,23 @@ import { createElement } from 'react';
 import { Layout, Menu } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-    (icon, index) => ({
-        key: String(index + 1),
-        icon: createElement(icon),
-        label: `nav ${index + 1}`,
-    }),
-);
+const items = [
+    {
+        key: "key",
+        label: "Dashboard",
+
+    },
+    {
+        key: "key",
+        label: "Profile",
+
+    },
+    {
+        key: "key",
+        label: "User Management",
+
+    },
+]
 
 const MainLayout = () => {
     return (
