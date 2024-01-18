@@ -31,7 +31,7 @@ const adminPath2 = [
         ]
     },
     {
-        name: "Course Management",
+        name: "Course Managements",
         children: [
             {
                 name: "Offered Course",
