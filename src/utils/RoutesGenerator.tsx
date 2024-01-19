@@ -1,5 +1,5 @@
 function RoutesGenerator() {
-    export const adminRoutes = adminPaths.reduce((acc: IRoute[], item) => {
+    const routes = adminPaths.reduce((acc: IRoute[], item) => {
         if (item.path && item.element) {
             acc.push({
                 path: item.path,
@@ -16,5 +16,6 @@ function RoutesGenerator() {
         }
         return acc
     }, [])
+    return routes
 
-    export default RoutesGenerator
+}
