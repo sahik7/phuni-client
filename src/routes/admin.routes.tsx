@@ -1,8 +1,13 @@
+import { ReactNode } from "react";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent";
 
+interface IRoute {
+    path: string,
+    element: ReactNode
+}
 
 const adminPaths = [
     {
@@ -31,3 +36,22 @@ const adminPaths = [
         ]
     },
 ]
+
+
+export const adminRoutes = adminPaths.reduce((acc: IRoute[], item) => {
+    if (item.path && item.element) {
+        acc.push({
+            path: item.path,
+            element: item.element
+        })
+    }
+    if (item.children) {
+        item.children.forEach(child => {
+            acc.push({
+                path: child.path,
+                element: child.element
+            })
+        })
+    }
+    return acc
+}, [])
