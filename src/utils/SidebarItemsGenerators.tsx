@@ -19,7 +19,7 @@ function SidebarItemsGenerators(items: IUserPaths[], role) {
                 label: item.name,
                 children: item.children.map(child => ({
                     key: child.name,
-                    label: <NavLink to={`/admin/${child.path}`}>{child.name}</NavLink>
+                    label: <NavLink to={`/${role}/${child.path}`}>{child.name}</NavLink>
                 }))
             })
         }
