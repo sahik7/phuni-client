@@ -4,10 +4,10 @@ import CreateFaculty from "../pages/admin/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent";
 
 
-const adminPath2 = [
+const adminPaths = [
     {
         name: "Dashboard",
-        path: "/admin/dashboard",
+        path: "dashboard",
         element: <AdminDashboard />
     },
     {
@@ -15,59 +15,19 @@ const adminPath2 = [
         children: [
             {
                 name: "Create Admin",
-                path: "/admin/create-admin",
+                path: "create-admin",
                 element: <CreateAdmin />
             },
             {
                 name: "Create Student",
-                path: "/admin/create-student",
+                path: "create-student",
                 element: <CreateStudent />
             },
             {
                 name: "Create Faculty",
-                path: "/admin/create-faculty",
+                path: "create-faculty",
                 element: <CreateFaculty />
             },
         ]
-    },
-    {
-        name: "Course Managements",
-        children: [
-            {
-                name: "Offered Course",
-                path: "/admin/offered-course",
-                element: <CreateAdmin />
-            },
-            {
-                name: "Create Student",
-                path: "/admin/create-student",
-                element: <CreateStudent />
-            },
-            {
-                name: "Create Faculty",
-                path: "/admin/create-faculty",
-                element: <CreateFaculty />
-            },
-        ]
-    },
-]
-
-
-export const adminPaths = [
-    {
-        path: "dashboard",
-        element: <AdminDashboard />
-    },
-    {
-        path: "create-student",
-        element: <CreateStudent />
-    },
-    {
-        path: "create-admin",
-        element: <CreateAdmin />
-    },
-    {
-        path: "create-faculty",
-        element: <CreateFaculty />
     },
 ]
