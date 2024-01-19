@@ -1,5 +1,5 @@
-function RoutesGenerator() {
-    const routes = adminPaths.reduce((acc: IRoute[], item) => {
+function RoutesGenerator(items) {
+    const routes = items.reduce((acc: IRoute[], item) => {
         if (item.path && item.element) {
             acc.push({
                 path: item.path,
