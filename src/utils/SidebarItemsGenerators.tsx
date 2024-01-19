@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { ReactNode } from "react";
+import { ISidebarItems, IUserPaths } from '../types';
 
 
 
 
-function SidebarItemsGenerators(items: ISidebarItems[]) {
+function SidebarItemsGenerators(items: IUserPaths[]) {
     const adminSidebarItems = items.reduce((acc: ISidebarItems[], item) => {
         if (item.name && item.path) {
             acc.push({
