@@ -4,12 +4,12 @@ import { ISidebarItems, IUserPaths } from '../types';
 
 
 
-function SidebarItemsGenerators(items: IUserPaths[]) {
+function SidebarItemsGenerators(items: IUserPaths[], role) {
     const adminSidebarItems = items.reduce((acc: ISidebarItems[], item) => {
         if (item.name && item.path) {
             acc.push({
                 key: item.name,
-                label: <NavLink to={`/admin/${item.path}`}>{item.name}</NavLink>
+                label: <NavLink to={`/${role}/${item.path}`}>{item.name}</NavLink>
             })
         }
 
