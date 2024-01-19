@@ -12,7 +12,7 @@ interface IUserPaths {
     children?: IUserPaths[]
 }
 
-function RoutesGenerator(items: IUserPaths[]) {
+export function RoutesGenerator(items: IUserPaths[]) {
     const routes = items.reduce((acc: IRoute[], item) => {
         if (item.path && item.element) {
             acc.push({

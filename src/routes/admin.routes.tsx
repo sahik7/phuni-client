@@ -3,6 +3,7 @@ import CreateAdmin from "../pages/admin/CreateAdmin";
 import CreateFaculty from "../pages/admin/CreateFaculty";
 import CreateStudent from "../pages/admin/CreateStudent";
 import { NavLink } from "react-router-dom";
+import { ReactNode } from 'react'
 
 
 interface ISidebarItems {
@@ -11,7 +12,7 @@ interface ISidebarItems {
     children?: ISidebarItems[]
 }
 
-const adminPaths = [
+export const adminPaths = [
     {
         name: "Dashboard",
         path: "dashboard",
