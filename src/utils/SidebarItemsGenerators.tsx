@@ -4,7 +4,7 @@ import { ISidebarItems, IUserPaths } from '../types';
 
 
 
-function SidebarItemsGenerators(items: IUserPaths[], role) {
+function SidebarItemsGenerators(items: IUserPaths[], role: string) {
     const adminSidebarItems = items.reduce((acc: ISidebarItems[], item) => {
         if (item.name && item.path) {
             acc.push({
