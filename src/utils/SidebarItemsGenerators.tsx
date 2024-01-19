@@ -2,11 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { ReactNode } from "react";
 
 
-interface ISidebarItems {
-    key: string,
-    label: ReactNode,
-    children?: ISidebarItems[]
-}
+
 
 function SidebarItemsGenerators(items: ISidebarItems[]) {
     const adminSidebarItems = items.reduce((acc: ISidebarItems[], item) => {

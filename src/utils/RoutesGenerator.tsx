@@ -1,16 +1,5 @@
-import { ReactNode } from "react";
+import { IRoute, IUserPaths } from "../types"
 
-interface IRoute {
-    path: string,
-    element: ReactNode
-}
-
-interface IUserPaths {
-    name: string,
-    path?: string,
-    element?: ReactNode,
-    children?: IUserPaths[]
-}
 
 export function RoutesGenerator(items: IUserPaths[]) {
     const routes = items.reduce((acc: IRoute[], item) => {
