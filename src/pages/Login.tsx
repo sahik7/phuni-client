@@ -1,6 +1,6 @@
 function Login() {
     return (
-        <div>
+        <form>
             <div>
                 <label htmlFor="id">ID:</label>
                 <input type="text" id="id" />
@@ -9,7 +9,7 @@ function Login() {
                 <label htmlFor="password">Password</label>
                 <input type="text" id="password" />
             </div>
-        </div>
+        </form>
     )
 }
 
