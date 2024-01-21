@@ -1,3 +1,4 @@
+import { Button } from "antd"
 import { useForm } from "react-hook-form"
 
 function Login() {
@@ -18,6 +19,7 @@ function Login() {
                 <label htmlFor="password">Password</label>
                 <input type="text" id="password" />
             </div>
+            <Button>Login</Button>
         </form>
     )
 }
