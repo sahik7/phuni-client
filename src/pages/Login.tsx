@@ -13,13 +13,13 @@ function Login() {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="id">ID:</label>
-                <input type="text" id="id" />
+                <input type="text" id="id" {...register("id")} />
             </div>
             <div>
                 <label htmlFor="password">Password</label>
-                <input type="text" id="password" />
+                <input type="text" id="password" {...register("id")} />
             </div>
-            <Button>Login</Button>
+            <Button >Login</Button>
         </form>
     )
 }
