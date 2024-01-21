@@ -4,8 +4,10 @@ function Login() {
 
     const { register, handleSubmit } = useForm()
 
+    const onSubmit = () => { }
+
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit()}>
             <div>
                 <label htmlFor="id">ID:</label>
                 <input type="text" id="id" />
