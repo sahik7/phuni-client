@@ -1,6 +1,15 @@
 function Login() {
     return (
-        <div>Login</div>
+        <div>
+            <div>
+                <label htmlFor="id">ID:</label>
+                <input type="text" id="id" />
+            </div>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input type="text" id="password" />
+            </div>
+        </div>
     )
 }
 
