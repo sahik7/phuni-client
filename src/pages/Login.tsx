@@ -17,7 +17,7 @@ function Login() {
             </div>
             <div>
                 <label htmlFor="password">Password</label>
-                <input type="text" id="password" {...register("id")} />
+                <input type="text" id="password" {...register("password")} />
             </div>
             <Button >Login</Button>
         </form>
