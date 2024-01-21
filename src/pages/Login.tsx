@@ -18,7 +18,7 @@ function Login() {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="id">ID:</label>
-                <input type="text" id="id" {...register("id")} />
+                <input type="text" id="id" {...register("user-id")} />
             </div>
             <div>
                 <label htmlFor="password">Password</label>
