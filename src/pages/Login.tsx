@@ -4,7 +4,9 @@ function Login() {
 
     const { register, handleSubmit } = useForm()
 
-    const onSubmit = (data) => { }
+    const onSubmit = (data) => {
+        console.log(data)
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
