@@ -1,8 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
+export interface IUser {
+    userId: string,
+    role: string,
+    iat: number,
+    exp: number
+}
+
 interface IAuthState {
-    user: null | object,
+    user: null | IUser,
     token: null | string,
 }
 

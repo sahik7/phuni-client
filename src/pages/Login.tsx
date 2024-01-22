@@ -2,7 +2,7 @@ import { Button } from "antd"
 import { useForm } from "react-hook-form"
 import { useLoginMutation } from "../redux/features/auth/authApi"
 import { useAppDispatch } from "../redux/features/hooks"
-import { setUser } from "../redux/features/auth/authSlice"
+import { IUser, setUser } from "../redux/features/auth/authSlice"
 import { verifyToken } from "../utils/verifyToken"
 import { useNavigate } from "react-router-dom"
 import { toast } from 'sonner';
@@ -21,7 +21,7 @@ function Login() {
 
     const [login, { error }] = useLoginMutation()
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data: { userId: string, password: string }) => {
         const toastId = toast.loading("logging in ")
         try {
             const userInfo = {
@@ -30,7 +30,7 @@ function Login() {
             }
             const rest = await login(userInfo).unwrap();
 
-            const user = verifyToken(rest.data.accessToken)
+            const user = verifyToken(rest.data.accessToken) as IUser
             dispatch(setUser({ user: user, token: rest.data.accessToken }))
             toast.success("logged in", { id: toastId, duration: 2000 })
             navigate(`/${user?.role}/dashboard`)
