@@ -2,6 +2,7 @@ import { Button } from "antd"
 import { useForm } from "react-hook-form"
 import { useLoginMutation } from "../redux/features/auth/authApi"
 import { useAppDispatch } from "../redux/features/hooks"
+import { setUser } from "../redux/features/auth/authSlice"
 
 function Login() {
 
@@ -24,7 +25,7 @@ function Login() {
             password: data.password
         }
         const rest = await login(userInfo).unwrap();
-        dispatch(set)
+        dispatch(setUser())
 
     }
 
