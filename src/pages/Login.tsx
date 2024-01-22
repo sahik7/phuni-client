@@ -25,7 +25,7 @@ function Login() {
             password: data.password
         }
         const rest = await login(userInfo).unwrap();
-        dispatch(setUser())
+        dispatch(setUser({ user: {}, token: rest.data.accessToken }))
 
     }
 
