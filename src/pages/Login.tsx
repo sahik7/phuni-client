@@ -4,10 +4,13 @@ import { useLoginMutation } from "../redux/features/auth/authApi"
 import { useAppDispatch } from "../redux/features/hooks"
 import { setUser } from "../redux/features/auth/authSlice"
 import { verifyToken } from "../utils/verifyToken"
+import { useNavigate } from "react-router-dom"
+import { toast } from 'sonner';
+
 
 function Login() {
 
-
+    const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const { register, handleSubmit } = useForm({
         defaultValues: {
@@ -19,16 +22,21 @@ function Login() {
     const [login, { error }] = useLoginMutation()
 
     const onSubmit = async (data) => {
-        console.log(data)
-        const userInfo = {
-            id: data.userId,
-            password: data.password
+        const toastId = toast.loading("logging in ")
+        try {
+            const userInfo = {
+                id: data.userId,
+                password: data.password
+            }
+            const rest = await login(userInfo).unwrap();
+
+            const user = verifyToken(rest.data.accessToken)
+            dispatch(setUser({ user: user, token: rest.data.accessToken }))
+            toast.success("logged in", { id: toastId, duration: 2000 })
+            navigate(`/${user?.role}/dashboard`)
+        } catch (error) {
+            toast.error("something went wrong", { id: toastId, duration: 2000 })
         }
-        const rest = await login(userInfo).unwrap();
-
-        const user = verifyToken(rest.data.accessToken)
-        dispatch(setUser({ user: user, token: rest.data.accessToken }))
-
     }
 
     return (
