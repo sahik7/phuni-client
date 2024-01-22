@@ -17,7 +17,6 @@ function Login() {
     })
 
     const [login, { error }] = useLoginMutation()
-    console.log(error)
 
     const onSubmit = async (data) => {
         console.log(data)
