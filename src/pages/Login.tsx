@@ -1,5 +1,5 @@
 import { Button } from "antd"
-import { useForm } from "react-hook-form"
+import { FieldValues, useForm } from "react-hook-form"
 import { useLoginMutation } from "../redux/features/auth/authApi"
 import { useAppDispatch } from "../redux/features/hooks"
 import { IUser, setUser } from "../redux/features/auth/authSlice"
@@ -19,9 +19,9 @@ function Login() {
         },
     })
 
-    const [login, { error }] = useLoginMutation()
+    const [login] = useLoginMutation()
 
-    const onSubmit = async (data: { userId: string, password: string }) => {
+    const onSubmit = async (data: FieldValues) => {
         const toastId = toast.loading("logging in ")
         try {
             const userInfo = {
@@ -33,7 +33,7 @@ function Login() {
             const user = verifyToken(rest.data.accessToken) as IUser
             dispatch(setUser({ user: user, token: rest.data.accessToken }))
             toast.success("logged in", { id: toastId, duration: 2000 })
-            navigate(`/${user?.role}/dashboard`)
+            navigate(`/${user.role}/dashboard`)
         } catch (error) {
             toast.error("something went wrong", { id: toastId, duration: 2000 })
         }
