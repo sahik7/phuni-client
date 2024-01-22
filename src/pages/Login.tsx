@@ -21,7 +21,7 @@ function Login() {
             id: data.userId,
             password: data.password
         }
-        const rest = await login(userInfo);
+        const rest = await login(userInfo).unwrap();
 
     }
 
