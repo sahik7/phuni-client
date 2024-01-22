@@ -6,7 +6,7 @@ function Login() {
 
     const { register, handleSubmit } = useForm({
         defaultValues: {
-            userId: "A-0002",
+            userId: "A-0001",
             password: "admin123"
         },
     })
@@ -15,13 +15,14 @@ function Login() {
     console.log(data)
     console.log(error)
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         console.log(data)
         const userInfo = {
             id: data.userId,
             password: data.password
         }
-        login(userInfo);
+        const rest = await login(userInfo);
+
     }
 
     return (
