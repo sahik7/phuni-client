@@ -11,7 +11,7 @@ function Login() {
         },
     })
 
-    const [login, { data, error }] = useLoginMutation()
+    const [login, { error }] = useLoginMutation()
     console.log(data)
     console.log(error)
 
