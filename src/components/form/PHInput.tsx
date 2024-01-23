@@ -1,11 +1,11 @@
 import { useFormContext } from "react-hook-form";
 
-const PHInput = () => {
+const PHInput = ({ type, name }) => {
 
     const { register } = useFormContext()
     return (
         <div>
-            <input type="text" id="password" {...register("password")} />
+            <input type={type} id={name} {...register(name)} />
         </div>
     );
 };

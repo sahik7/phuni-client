@@ -40,11 +40,11 @@ function Login() {
         <PHForm onSubmit={onSubmit}>
             <div>
                 <label htmlFor="id">ID:</label>
-                {/* <input type="text" id="id" {...register("userId")} /> */}
+                < PHInput type="text" name="id" />
             </div>
             <div>
                 <label htmlFor="password">Password</label>
-                <PHInput />
+                <PHInput type="text" name="password" />
             </div>
             <Button htmlType="submit">Login</Button>
         </PHForm>
