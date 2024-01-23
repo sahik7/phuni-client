@@ -3,7 +3,7 @@ import { Controller } from "react-hook-form";
 
 const PHInput = ({ type, name, label }) => {
     return (
-        <div>
+        <div style={{ marginBottom: "20px" }}>
             {label ? label : null}
             <Controller
                 name={name} render={({ field }) =>
