@@ -4,7 +4,7 @@ const PHForm = ({ onSubmit, children }) => {
 
     const methods = useForm()
 
-    return <FormProvider >
+    return <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
             {children}
         </form>
