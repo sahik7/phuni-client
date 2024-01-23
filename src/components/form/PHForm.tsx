@@ -2,10 +2,10 @@ import { FormProvider, useForm } from "react-hook-form";
 
 const PHForm = ({ onSubmit, children }) => {
 
-    const { handleSubmit } = useForm()
+    const methods = useForm()
 
-    return <FormProvider>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    return <FormProvider >
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
             {children}
         </form>
     </FormProvider>
