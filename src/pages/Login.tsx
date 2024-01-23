@@ -23,21 +23,22 @@ function Login() {
     const [login] = useLoginMutation()
 
     const onSubmit = async (data: FieldValues) => {
-        const toastId = toast.loading("logging in ")
-        try {
-            const userInfo = {
-                id: data.userId,
-                password: data.password
-            }
-            const rest = await login(userInfo).unwrap();
+        // const toastId = toast.loading("logging in ")
+        // try {
+        //     const userInfo = {
+        //         id: data.userId,
+        //         password: data.password
+        //     }
+        //     const rest = await login(userInfo).unwrap();
 
-            const user = verifyToken(rest.data.accessToken) as IUser
-            dispatch(setUser({ user: user, token: rest.data.accessToken }))
-            toast.success("logged in", { id: toastId, duration: 2000 })
-            navigate(`/${user.role}/dashboard`)
-        } catch (error) {
-            toast.error("something went wrong", { id: toastId, duration: 2000 })
-        }
+        //     const user = verifyToken(rest.data.accessToken) as IUser
+        //     dispatch(setUser({ user: user, token: rest.data.accessToken }))
+        //     toast.success("logged in", { id: toastId, duration: 2000 })
+        //     navigate(`/${user.role}/dashboard`)
+        // } catch (error) {
+        //     toast.error("something went wrong", { id: toastId, duration: 2000 })
+        // }
+        console.log(data)
     }
 
     return (
